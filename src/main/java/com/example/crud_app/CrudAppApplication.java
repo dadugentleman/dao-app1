@@ -24,10 +24,18 @@ public class CrudAppApplication {
 	}
 
 	private void createStudent(StudentDAO studentDAO) {
-		Student student = new Student();
-		student.setFirstName("Ciutac");
-		student.setLastName("Ion");
-		studentDAO.save(student);
+
+		//cream un obiect Student
+		System.out.println("Creating student");
+		Student newStudent = new Student("John", "Doe", "john@gmail.com");
+
+		//Salvam obiectul Student in baza de date folosind DAO
+		System.out.println("Saving the student");
+		studentDAO.save(newStudent);
+
+		// afisam ID-ul student salvat
+		System.out.println("Saved student. Generated id: " + newStudent.getId());
+
 
 	}
 
