@@ -21,14 +21,12 @@ public class StudentDAOImplementation implements StudentDAO {
     }
 
     //Implementarea metodei save pentru a salvarea unui obiect
-    //student in baza de date 40000
+    //student in baza de date
 
-    //idk
-    int name = 20;
 
     @Override
     @Transactional
     public void save(Student theStudent) {
-
+        entityManager.persist(theStudent);
     }
 }
