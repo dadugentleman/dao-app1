@@ -36,7 +36,20 @@ public class CrudAppApplication {
 		// afisam ID-ul student salvat
 		System.out.println("Saved student. Generated id: " + newStudent.getId());
 
+	}
 
+	private void createMultipleStudents(StudentDAO studentDAO) {
+		//creeam mai multi studenti
+		System.out.println("Creating 3 student objects");
+		Student newStudent1 = new Student("Andrei", "Munteanu", "andrei@gmail.com");
+		Student newStudent2 = new Student("Iulian", "Vatamanu", "iulic@gmail.com");
+		Student newStudent3 = new Student("Maria", "Mirabel", "maria@gmail.com");
+
+		//salvam obiectele student in baza de date
+		System.out.println("Saving the students");
+		studentDAO.save(newStudent1);
+		studentDAO.save(newStudent2);
+		studentDAO.save(newStudent3);
 	}
 
 }
